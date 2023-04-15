@@ -1,12 +1,17 @@
-<script>
-	import "./styles.css";
+<script lang="ts">
+	import { onMount } from "svelte";
+	import { user } from "../store/user";
+	import type { LayoutData } from "./$types";
+	import "./global.scss";
+	import "./reset.scss";
+
+	export let data: LayoutData;
+
+	onMount(async () => {
+		const { user: userInfo } = data;
+
+		user.set(userInfo);
+	});
 </script>
 
-<div class="app">
-	<main>
-		<slot />
-	</main>
-</div>
-
-<style>
-</style>
+<slot />
