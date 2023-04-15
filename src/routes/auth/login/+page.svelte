@@ -109,7 +109,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 20rem;
-			color: var(--app-red300);
+			color: var(--app-red300); // todo error message 색상이 다소 어색
 			font-size: 0.7rem;
 			text-align: center;
 		}
