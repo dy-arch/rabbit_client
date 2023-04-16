@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 const remote = axios.create({ withCredentials: true });
 
 const requestHandler = (conf: InternalAxiosRequestConfig) => {
-	if (conf.url !== "/api/auth") {
+	if (!conf.headers.Authorization) {
 		const accessToken = Cookies.get("access_token");
 		conf.headers.Authorization = accessToken;
 	}
