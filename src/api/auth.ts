@@ -64,7 +64,7 @@ export async function login(loginConf: LoginRequest) {
 }
 
 export async function getUserState(accessToken?: string) {
-	const getUserPath = accessToken ? "http://localhost:4000/api/auth/" : "/api/auth/";
+	const getUserPath = browser ? "/api/auth/" : "http://localhost:4000/api/auth/";
 	const config = accessToken
 		? {
 				headers: { Authorization: accessToken },
