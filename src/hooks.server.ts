@@ -48,7 +48,7 @@ export const handle = (async ({ event, resolve }) => {
 		});
 	}
 	// 두 번째 유저 정보 조회
-	const { data: secondData, status: secondStatus } = await getUserState(accessToken);
+	const { data: secondData, status: secondStatus } = await getUserState(refreshData.accessToken);
 	// 성공 시 유저 정보 저장
 	if (secondStatus === 200) {
 		event.locals.user = secondData as User;
