@@ -1,6 +1,7 @@
 import { goto } from "$app/navigation";
 import { redirect } from "@sveltejs/kit";
 import type { LayoutServerLoad } from "./$types";
+import { browser } from "$app/environment";
 
 export const prerender = true;
 
@@ -12,6 +13,9 @@ export const load = (({ cookies, url, locals }) => {
 
 	if (!refreshToken || !accessToken || !user) {
 		if (pathname !== "/auth/login") {
+			cookies.delete("access_token");
+			cookies.delete("refresh_token");
+			locals.user = null;
 			throw redirect(307, "/auth/login");
 		}
 	}
