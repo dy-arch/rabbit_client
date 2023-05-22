@@ -1,15 +1,13 @@
-<script>
+<script lang="ts">
 </script>
 
 <svelte:head>
 	<title>rabbit</title>
 </svelte:head>
 
-<section>
-	<h1>Hello, World</h1>
-</section>
+<main id="mainPage">
+	<a href="/auth/login">로그인페이지</a>
+</main>
 
-<h1>hi</h1>
-
-<style>
+<style lang="scss">
 </style>
