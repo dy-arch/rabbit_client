@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HambergerButton from "../components/HambergerButton.svelte";
+	import HambergerButton from "../components/HamburgerButton.svelte";
 
 	let sideActive: boolean = false;
 	$: sideClass = sideActive ? "active" : "";
