@@ -1,27 +1,23 @@
 <script lang="ts">
-	import { createEventDispatcher } from "svelte";
-
 	export { className as class };
 	export let active: boolean = false;
-
-	const dispatch = createEventDispatcher();
 
 	let className: string = "";
 </script>
 
-<button id="hambergerButton" class={`${className} ${active ? "open" : ""}`} on:click>
-	<span class="bergerLine line1" />
-	<span class="bergerLine line2" />
-	<span class="bergerLine line3" />
+<button id="hamburgerButton" class={`${className} ${active ? "open" : ""}`} on:click>
+	<span class="burgerLine line1" />
+	<span class="burgerLine line2" />
+	<span class="burgerLine line3" />
 </button>
 
 <style lang="scss">
-	#hambergerButton {
+	#hamburgerButton {
 		width: 1.25rem;
 		height: 1rem;
 		background-color: transparent;
 
-		.bergerLine {
+		.burgerLine {
 			position: absolute;
 			display: block;
 			width: 100%;
